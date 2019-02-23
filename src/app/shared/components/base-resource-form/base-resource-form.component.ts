@@ -96,7 +96,7 @@ export abstract class BaseResourceFormComponent<T extends BaseResourceModel> imp
     this.resourceService.create(resource)
       .subscribe(
         // tslint:disable-next-line:no-shadowed-variable
-        category => this.actionsForSuccess(category),
+        resource => this.actionsForSuccess(resource),
         error => this.actionsForError(error)
       );
   }
