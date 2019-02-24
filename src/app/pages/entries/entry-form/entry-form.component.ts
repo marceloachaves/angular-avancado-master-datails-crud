@@ -14,7 +14,7 @@ import { BaseResourceFormComponent } from '../../../shared/components/base-resou
   templateUrl: './entry-form.component.html',
   styleUrls: ['./entry-form.component.css']
 })
-export class EntryFormComponent extends BaseResourceFormComponent<Entry> implements OnInit{
+export class EntryFormComponent extends BaseResourceFormComponent<Entry> implements OnInit {
 
   categories: Array<Category>;
 
