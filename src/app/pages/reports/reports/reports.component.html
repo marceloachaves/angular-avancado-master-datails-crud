@@ -4,9 +4,7 @@
 
 <app-page-header
   page-title="Relatório de Receitas e Despesas"
-  button-text=""
-  button-link=""
-  button-class=""
+  [show-button]="false"
 ></app-page-header>
 
 <div class="card">
@@ -26,10 +24,10 @@
           <option value="5">Maio</option>
           <option value="6">Junho</option>
           <option value="7">Julho</option>
-          <option value="8">Agorsto</option>
+          <option value="8">Agosto</option>
           <option value="9">Setembro</option>
-          <option value="10">Outurbo</option>
-          <option value="11">Novembor</option>
+          <option value="10">Outubro</option>
+          <option value="11">Novembro</option>
           <option value="12">Dezembro</option>
         </select>
       </div>
@@ -59,21 +57,27 @@
       <div class="card text-center text-white bg-success">
         <div class="card-header">Total de Receitas</div>
         <div class="card-body">
-          <h3 class="card-title">1500</h3>
+          <h3 class="card-title">
+            {{ revenueTotal }}
+          </h3>
         </div>
       </div>
 
       <div class="card text-center text-white bg-danger">
         <div class="card-header">Total de Despesas</div>
         <div class="card-body">
-          <h3 class="card-title">500</h3>
+          <h3 class="card-title">
+            {{expenseTotal}}
+          </h3>
         </div>
       </div>
 
       <div class="card text-center text-white bg-info">
           <div class="card-header">Saldo</div>
           <div class="card-body">
-            <h3 class="card-title">1000</h3>
+            <h3 class="card-title">
+              {{balance}}
+            </h3>
           </div>
         </div>
     </div>
@@ -83,7 +87,11 @@
 <hr>
 
 <div class="row mt-5 mb-4">
-  <div class="col-md-6">GRÁFICO RECEITAS</div>
+  <div class="col-md-6">
+    <p-chart type="bar" [data]="revenueChartData" [options]="chartOptions"></p-chart>
+  </div>
 
-  <div class="col-md-6">GRÁFICO DESPESAS</div>
+  <div class="col-md-6">
+    <p-chart type="bar" [data]="expenseChartData" [options]="chartOptions"></p-chart>
+  </div>
 </div>
